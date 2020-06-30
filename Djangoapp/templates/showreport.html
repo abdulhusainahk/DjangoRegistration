@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm" border="1px solid black" align="center">
+    <thead class="thead-dark">
+        <tr>
+            <th>Course Name</th>
+            <th>CO ID</th>
+            <th>Att status</th>
+            <th>assessment</th>
+            <th>PO1</th>
+            <th>PO2</th>
+            <th>PO3</th>
+            <th>PO4</th>
+            <th>PO5</th>
+            <th>PO6</th>
+            <th>PO7</th>
+            <th>PO8</th>
+            <th>PO9</th>
+            <th>PO10</th>
+            <th>PO11</th>
+            <th>PO12</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{ i.Course_name }}</td>
+        <td>{{ i.CO_id_id }}</td>
+        <td>{{ i.assessment }}</td>
+        <td>{{ i.Y_N }}</td>
+        <td>{{ i.VPO1 }}</td>
+        <td>{{ i.VPO2 }}</td>
+        <td>{{ i.VPO3 }}</td>
+        <td>{{ i.VPO4 }}</td>
+        <td>{{ i.VPO5 }}</td>
+        <td>{{ i.VPO6 }}</td>
+        <td>{{ i.VPO7 }}</td>
+        <td>{{ i.VPO8 }}</td>
+        <td>{{ i.VPO9 }}</td>
+        <td>{{ i.VPO10 }}</td>
+        <td>{{ i.VPO11 }}</td>
+        <td>{{ i.VPO12 }}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #button {
+        line-height: 20px;
+        width:100px;
+        font-size:16px;
+        font-family: tahoma;
+        top:10px;
+        left:100px;
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="post" class="post-form" action="/delete">
+        {% csrf_token %}
+        <button id="button" type="submit">Logout</button>
+    </form>
+</div>
+    <h1>Name:{{data1.x}}</h1>
+    <h1>Password:{{data1.y}}</h1>
+
+<table class="table table-striped table-bordered table-sm">
+
+
+    <thead class="thead-dark">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for j in data1.employees %}
+    <tr>
+        <td>{{ j.course }}</td>
+        <td>{{ j.password }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

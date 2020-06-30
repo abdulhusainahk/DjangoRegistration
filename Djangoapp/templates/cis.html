@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<style>
+		.one {border-style: solid;
+		border-width: 5px;
+		font-size: 160%;}
+		img {
+  float: left;
+}
+	</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="one">
+	<img src="{% static 'images/kkwsymbol.jpg'%}" height="120px" width="180px">
+	<p align="center"><b>Department of Information Teachnology</b><br>
+	<b>K.K.Wagh Institue of Engineering Education and Research</b><br>
+	Hirabai Haridas Vidyanagari, Amrutdham, Panchvati, Nashik-422003</p>
+</div><br>
+<h1 align="center">Course Information Sheet</h1><br><br>
+<!--<div id="divActivites" name="divActivites" style="border:1 px solid black">
+    <textarea id="inActivities" name="inActivities" style="border:solid">
+    </textarea>
+</div>-->
+<div align="center">
+<table border="1px solid black" width="100%">
+		<tr>
+			<th colspan="3" align="left">Programme: {{pattern}}</th>
+			<th colspan="2">Class: T.E</th>
+			<th colspan="3">A.Y: 2018-19</th>
+		</tr>
+		<tr>
+			<th colspan="3" align="left">Course Code: {{code}}</th>
+			<th colspan="5" align="left">Course: {{course.CourseName}}</th>
+		</tr>
+		<tr>
+			<th colspan="3" align="left">Course Teacher: XYZ</th>
+			<th colspan="5" align="left">Department: Information Technology</th>
+		</tr>
+		<tr>
+			<th colspan="3">Teaching Scheme</th>
+			<th colspan="5">Exam Scheme</th>
+		</tr>
+    	<tr>
+			<th>Theory</th>
+			<th>Practicals</th>
+			<th>Tutorial</th>
+			<th>Online/Insem</th>
+			<th>Endsem</th>
+			<th>Term Work</th>
+			<th>Practical</th>
+			<th>Oral</th>
+    	</tr>
+   		<tr>
+			<td align="center">{{ ts.theory }}</td>
+			<td align="center">{{ ts.practicle }}</td>
+			<td align="center">{{ ts.tutorial }}</td>
+			<td align="center">{{ es.onlineinsem }}</td>
+			<td align="center">{{ es.endsem }}</td>
+			<td align="center">{{ es.termwork }}</td>
+			<td align="center">{{ es.Practicle }}</td>
+			<td align="center">{{ es.oral }}</td>
+    	</tr>
+	</table>
+</div><br><br><br>
+<h3 align="center">Delivery Methods</h3>
+<div align="center">
+<table border="1px solid black" width="100%">
+    	<tr>
+			<th>Chalk & Talk</th>
+			<th>ICT Tools</th>
+			<th>Group Discussion</th>
+			<th>Industrial/Field Visit</th>
+			<th>Expert Talk</th>
+			<th>Survey</th>
+			<th>Mini Project</th>
+        	<th>Lab</th>
+    	</tr>
+   		<tr>
+			<td align="center">{{ data.a }}</td>
+			<td align="center">{{ data.b }}</td>
+			<td align="center">{{ data.c }}</td>
+			<td align="center">{{ data.d }}</td>
+			<td align="center">{{ data.e }}</td>
+			<td align="center">{{ data.f }}</td>
+			<td align="center">{{ data.g }}</td>
+			<td align="center">{{ data.h }}</td>
+    	</tr>
+	</table>
+</div><br><br><br>
+<h3 align="center">Course Outcomes</h3>
+<div align="center">
+<table border="1px solid black" width="100%">
+    	<tr>
+			<th>Course Outcome</th>
+			<th>After successful completion of course</th>
+    	</tr>
+    {% for i in co %}
+   		<tr>
+			<td>{{ i.CO_id }}</td>
+			<td>{{ i.Outcome }}</td>
+    	</tr>
+    {% endfor %}
+	</table>
+</div><br><br><br>
+<h3>Program Outcomes(PO's)</h3>
+<div>
+<table>
+    {% for i in pos %}
+   		<tr>
+			<td>{{ i.id }}</td>
+			<td>{{ i.po }}</td>
+    	</tr>
+    {% endfor %}
+	</table>
+</div><br><br><br>
+<h3 align="center">Mapping of Course Outcome with Program Outcome<br>0:no correlation,1:slight,2:moderate,3:high</h3>
+<div align="center">
+<table border="1px solid black" width="100%">
+		<tr>
+			<th> </th>
+			<th>PO1</th>
+			<th>PO2</th>
+			<th>PO3</th>
+			<th>PO4</th>
+			<th>PO5</th>
+			<th>PO6</th>
+			<th>PO7</th>
+			<th>PO8</th>
+			<th>PO9</th>
+			<th>PO10</th>
+			<th>PO11</th>
+			<th>PO12</th>
+    	</tr>
+    {% for i in obj %}
+   		<tr>
+			<td align="center">{{ i.CO_id_id }}</td>
+			<td align="center">{{ i.VPO1 }}</td>
+			<td align="center">{{ i.VPO2 }}</td>
+			<td align="center">{{ i.VPO3 }}</td>
+			<td align="center">{{ i.VPO4 }}</td>
+			<td align="center">{{ i.VPO5 }}</td>
+			<td align="center">{{ i.VPO6 }}</td>
+			<td align="center">{{ i.VPO7 }}</td>
+			<td align="center">{{ i.VPO8 }}</td>
+			<td align="center">{{ i.VPO9 }}</td>
+			<td align="center">{{ i.VPO10 }}</td>
+			<td align="center">{{ i.VPO11 }}</td>
+			<td align="center">{{ i.VPO12 }}</td>
+    	</tr>
+    {% endfor %}
+	</table>
+</div><br><br><br>
+<h5>Target for the subject is : {{result1.target}}</h5><br>
+<h5>Attainment levels vs target<br>
+	<p><b>Attainment level 1</b>: 60% students score more than  marks</p>
+	<p><b>Attainment level 2</b>: 70% students score more than  marks</p>
+	<p><b>Attainment level 3</b>: 80% students score more than  marks</p><br><br>
+</h5>
+<h3>CO wise assessment</h3>
+<div align="center">
+<table border="1px solid black" width="100%">
+		<tr>
+			<th>CO</th>
+			<th>Assignment</th>
+			<th>Practical</th>
+			<th>TermWork</th>
+			<th>Unit Tests</th>
+			<th>Insem</th>
+			<th>Endsem</th>
+			<th>Assessment</th>
+			<th>Level</th>
+    {% for i in result1.res %}
+   		<tr>
+			<td align="center">{{ i.CO_id_id }}</td>
+			<td align="center">{{ i.assignment }}</td>
+			<td align="center">{{ i.practicle }}</td>
+			<td align="center">{{ i.termwork }}</td>
+			<td align="center">{{ i.unittests }}</td>
+			<td align="center">{{ i.insem }}</td>
+			<td align="center">{{ i.assessment }}</td>
+			<td align="center">{{ i.level }}</td>
+    	</tr>
+    {% endfor %}
+	</table>
+</div><br><br><br>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class="table table-striped table-bordered table-sm" border="1px solid black" align="center">
+    <thead class="thead-dark">
+        <tr>
+             <th>CourseCode_and_Pattern</th>
+            <th>assign_wise_calc</th>
+            <th>unit_wise_calc</th>
+            <th>insem</th>
+            <th>endsem</th>
+            <th>practicle</th>
+            <th>termwork</th>
+            <th>%assessment</th>
+            <th>Level</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in form %}
+    <tr>
+        <td>{{ i.CO_id_id }}</td>
+        <td>{{ i.assignment }}</td>
+        <td>{{ i.unittests }}</td>
+        <td>{{ i.insem }}</td>
+        <td>{{ i.endsem }}</td>
+        <td>{{ i.practicle }}</td>
+        <td>{{ i.termwork }}</td>
+        <td>{{ i.assessment }}</td>
+        <td>{{ i.level }}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+<form method="POST" action="/report_gen">
+    {% csrf_token %}
+    <p>show report</p>
+    <button type="submit">show</button>
+</form>
+</body>
+</html>

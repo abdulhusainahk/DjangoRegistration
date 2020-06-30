@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/teacher_alloc">
+        {% csrf_token %}
+        <h3>Enter ID of teacher</h3>
+        <p>Teacher ID:</p>
+        <br>
+        {{ form2.t_id }}<br>
+        <p>Course code and pattern:</p>
+        <br>
+        {{ form2.Code_patt }}<br>
+        <p>Enter class:</p>
+        <br>
+        {{ form2.Class }}<br>
+        <p>Enter semister:</p>
+        <br>
+        {{ form2.sem }}<br>
+        <p>Enter Academic Year :</p>
+        <br>
+        {{ form2.A_Y }}<br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

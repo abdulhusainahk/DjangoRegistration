@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {max-width: 5em};
+    </style>
+</head>
+<body>
+<form method="POST" class="post-form" action="/coursescheme">
+    <h4>Entered Course code and pattern : </h4>
+    {{ s1 }}
+    {% csrf_token %}
+    <p>Teaching Scheme</p><br>
+        <table class="table table-striped table-bordered table-sm">
+            <thead class="thead-dark">
+            <tr>
+                <th>Thoery</th>
+                <th>Practicle</th>
+                <th>Tutorial</th>
+            </tr>
+            <tr>
+                <th>(hrs/week)</th>
+                <th>(hrs/week)</th>
+                <th>(hrs/week)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ form.theory }}</td>
+                <td>{{ form.practicle }}</td>
+                <td>{{ form.tutorial }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <br><br>
+    <p>Exam Scheme</p><br>
+        <table class="table table-striped table-bordered table-sm">
+            <thead class="thead-dark">
+            <tr>
+                <th>Online/Insem</th>
+                <th>Endsem</th>
+                <th>TermWork</th>
+                <th>Practical</th>
+                <th>Oral</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ form2.onlineinsem }}</td>
+                <td>{{ form2.endsem }}</td>
+                <td>{{ form2.termwork }}</td>
+                <td>{{ form2.Practicle }}</td>
+                <td>{{ form2.oral }}</td>
+            </tr>
+            </tbody>
+        </table>
+    <br><br><br>
+    <button type="submit">save</button>
+    </form>
+</body>
+</html>

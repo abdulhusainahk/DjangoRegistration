@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/teacherentry">
+        {% csrf_token %}
+        <h3>Enter details of new teacher</h3>
+        <p>Teacher ID:</p>
+        <br>
+        {{ form2.t_id }}<br>
+        <p>Teacher Name:</p>
+        <br>
+        {{ form2.t_name }}<br>
+        <p>Contact no:</p>
+        <br>
+        {{ form2.t_contact }}<br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
